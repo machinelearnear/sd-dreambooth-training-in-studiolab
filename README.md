@@ -1,4 +1,4 @@
-# SD V2 Dreambooth Training with d🧨ffusers in SageMaker Studio Lab
+# Fine-tuning tutorial with `StableDiffusionV2`, `Dreambooth`, `d🧨ffusers`
 
 `HF Spaces` are a great way to showcase your ML work and are quickly becoming the platform of choice for that. This repository is a short step by step tutorial about how to run an ML application hosted on [Hugging Face Spaces](https://huggingface.co/spaces) inside SageMaker Studio Lab. This is relevant because Studio Lab offers free GPU (Nvidia T4, better than Google Colab) for 4 hours at a time plus 15G of persistant storage. Have a look at this [other repo](https://github.com/machinelearnear/use-gradio-streamlit-sagemaker-studiolab) to understand more about what we are doing here.
 

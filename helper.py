@@ -25,7 +25,7 @@ class RepoHandler:
         if 'google.colab' in str(get_ipython()):
             print(f"{bold}Running on Google Colab{unbold}")
         else:
-            print(f"{bold}Running on SageMaker Studio Lab or locally{unbold}")
+            print(f"{bold}Running locally / SageMaker StudioLab{unbold}")
             
         self.repo_url = repo_url
         self.repo_name = self.repo_url.split('/')[-1]
@@ -154,9 +154,13 @@ class RepoHandler:
             print(f'{bold} Seems that your GPU is not supported at the moment.{unbold}')
             time.sleep(5)
 
-        if (gpu=='T4'): precompiled_wheels = "https://github.com/TheLastBen/fast-stable-diffusion/raw/main/precompiled/T4/xformers-0.0.13.dev0-py3-none-any.whl"
-        elif (gpu=='P100'): precompiled_wheels = "https://github.com/TheLastBen/fast-stable-diffusion/raw/main/precompiled/P100/xformers-0.0.13.dev0-py3-none-any.whl"
-        elif (gpu=='V100'): precompiled_wheels = "https://github.com/TheLastBen/fast-stable-diffusion/raw/main/precompiled/V100/xformers-0.0.13.dev0-py3-none-any.whl"
-        elif (gpu=='A100'): precompiled_wheels = "https://github.com/TheLastBen/fast-stable-diffusion/raw/main/precompiled/A100/xformers-0.0.13.dev0-py3-none-any.whl"
+        if (gpu=='T4'): 
+            precompiled_wheels = "https://github.com/TheLastBen/fast-stable-diffusion/raw/main/precompiled/T4/xformers-0.0.13.dev0-py3-none-any.whl"
+        elif (gpu=='P100'): 
+            precompiled_wheels = "https://github.com/TheLastBen/fast-stable-diffusion/raw/main/precompiled/P100/xformers-0.0.13.dev0-py3-none-any.whl"
+        elif (gpu=='V100'): 
+            precompiled_wheels = "https://github.com/TheLastBen/fast-stable-diffusion/raw/main/precompiled/V100/xformers-0.0.13.dev0-py3-none-any.whl"
+        elif (gpu=='A100'): 
+            precompiled_wheels = "https://github.com/TheLastBen/fast-stable-diffusion/raw/main/precompiled/A100/xformers-0.0.13.dev0-py3-none-any.whl"
 
         subprocess.run(["pip", "install", "-q", precompiled_wheels])
